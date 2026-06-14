@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #f0f2f5; padding: 20px;">
+    <div style="
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: white;
+        padding: 30px;
+        border: 1px solid #e1e4e8;
+        border-radius: 8px;
+        font-family: sans-serif;
+        color: #000000;
+        max-width: 1200px;
+        margin: 0 auto;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    ">
+        
+<div style="flex: 0 0 380px; font-family: 'Segoe UI', Arial, sans-serif; padding-right: 20px; border-right: 2px solid #ccc; color: #000000;">
+    <h3 style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-top:0; color: #000000;">📊 Analiz Raporu</h3>
+    <table style="width: 100%; border-collapse: collapse; font-size: 15px; margin-bottom: 20px; color: #000000;">
+        <tr style="background-color: #f2f2f2; border-bottom: 1px solid #000;">
+            <th style="text-align: left; padding: 8px; border: 1px solid #999; color: #000000;">Metrik</th>
+            <th style="text-align: center; padding: 8px; border: 1px solid #999; color: #000000;">Karakter (CER)</th>
+            <th style="text-align: center; padding: 8px; border: 1px solid #999; color: #000000;">Kelime (WER)</th>
+        </tr>
+        <tr>
+            <td style="padding: 6px; border: 1px solid #999; font-weight: bold;">Toplam</td>
+            <td style="text-align: center; border: 1px solid #999; font-weight: bold;">682</td>
+            <td style="text-align: center; border: 1px solid #999; font-weight: bold;">124</td>
+        </tr>
+        <tr>
+            <td style="padding: 6px; border: 1px solid #999; color: #842029; font-weight: bold;">❌ Silinen</td>
+            <td style="text-align: center; border: 1px solid #999; color: #842029; font-weight: bold;">28</td>
+            <td style="text-align: center; border: 1px solid #999; color: #842029; font-weight: bold;">5</td>
+        </tr>
+        <tr>
+            <td style="padding: 6px; border: 1px solid #999; color: #0f5132; font-weight: bold;">➕ Eklenen</td>
+            <td style="text-align: center; border: 1px solid #999; color: #0f5132; font-weight: bold;">39</td>
+            <td style="text-align: center; border: 1px solid #999; color: #0f5132; font-weight: bold;">7</td>
+        </tr>
+        <tr>
+            <td style="padding: 6px; border: 1px solid #999; color: #664d03; font-weight: bold;">🔄 Değişen</td>
+            <td style="text-align: center; border: 1px solid #999; color: #664d03; font-weight: bold;">45</td>
+            <td style="text-align: center; border: 1px solid #999; color: #664d03; font-weight: bold;">32</td>
+        </tr>
+    </table>
+    <div style="background-color: #f8d7da; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #000; color: #000000;">
+        <h4 style="margin:0; color: #000000;">Karakter Doğruluk Oranı</h4>
+        <h1 style="margin: 5px 0; font-size: 32px; color: #000000;">%83.58</h1>
+        <span style="font-weight: bold; font-size: 18px; color: #000000;">ZAYIF</span><br>
+        <span style="font-size: 14px; color: #000000; font-style: italic;">Neredeyse yeniden yazılması gerekir</span>
+    </div>
+    <br>
+    <h4 style="margin: 15px 0 5px 0; border-bottom: 1px solid #000; color: #000000;">🏆 Başarı Kriterleri</h4>
+    <table style="width: 100%; border-collapse: collapse; font-size: 14px; color: #000000;">
+        <tr style="background-color: #333; color: white;">
+            <th style="padding: 6px; text-align: left; border: 1px solid #000;">Doğruluk Oranı</th>
+            <th style="padding: 6px; text-align: left; border: 1px solid #000;">Durum / Açıklama</th>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #999; color: #000000; vertical-align: top;"><b>%98 - %100</b></td>
+            <td style="padding: 8px; border: 1px solid #999; color: #000000;">
+                <b>İYİ</b><br>
+                <span style="font-style:italic; font-size: 12px;">Sınırlı seviyede düzeltme gerekir.</span>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #999; color: #000000; vertical-align: top;"><b>%90 - %97</b></td>
+            <td style="padding: 8px; border: 1px solid #999; color: #000000;">
+                <b>ORTA</b><br>
+                <span style="font-style:italic; font-size: 12px;">Önemli ölçüde düzeltme gerekir.</span>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; border: 1px solid #999; color: #000000; vertical-align: top;"><b>< %90</b></td>
+            <td style="padding: 8px; border: 1px solid #999; color: #000000;">
+                <b>ZAYIF</b><br>
+                <span style="font-style:italic; font-size: 12px;">Neredeyse yeniden yazılması gerekir.</span>
+            </td>
+        </tr>
+    </table>
+</div>
+
+        
+<div style="flex: 1; min-width: 400px; padding-left: 20px; color: #000000;">
+    <h3 style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-top:0; text-align: right; color: #000000;">📝 Görsel Hata Analizi (Perplexity Pro)</h3>
+    <div dir="rtl" style="
+        font-family: 'Amiri', 'Traditional Arabic', serif;
+        font-size: 24px;
+        line-height: 1.8;
+        color: #000000;
+        background-color: #fff;
+        padding: 15px;
+        border: 1px solid #999;
+        border-radius: 4px;
+        height: auto;
+        min-height: 400px;">
+        <span>هذا حديث الاربعون بركووى محمد افندى </span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">ـ</span><span style="background-color: #f8d7da; color: #842029; text-decoration: line-through; margin: 0 1px;">بس</span><span>م الله الرحمن الرحيم<br>الحمد لله رب العالمين والصلوة والسلام على محمد</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"> </span><span>وال</span><span style="background-color: #d1e7dd; color: #0f5132; margin: 0 1px;">ل</span><span>ه اجمعين</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"><br></span><span>الحديث ال</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">أ</span><span>ول</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"><br>إ</span><span>نما ال</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">أ</span><span>عمال بالنيات</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"> </span><span>وا</span><span style="background-color: #d1e7dd; color: #0f5132; margin: 0 1px;">ل</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">ت</span><span>ما لكل امر</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">ى</span><span> ما</span><span style="background-color: #f8d7da; color: #842029; text-decoration: line-through; margin: 0 1px;"> </span><span>نوى فمن كانت هجرته </span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">إ</span><span>لى الله و</span><span style="background-color: #d1e7dd; color: #0f5132; margin: 0 1px;">ا</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"> </span><span>رسوله فهجرته </span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">إ</span><span>لى الله ورسوله ومن كانت هجرته</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"> </span><span style="background-color: #f8d7da; color: #842029; text-decoration: line-through; margin: 0 1px;">ا</span><span>ل</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">ا</span><span> دنيا يصيبها او ا</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">س</span><span>ر</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">ا</span><span>ة </span><span style="background-color: #d1e7dd; color: #0f5132; margin: 0 1px;">او الى الشركة </span><span>يتزوجها فهجرته</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"> إ</span><span>لى ما هاجر</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">إ</span><span style="background-color: #f8d7da; color: #842029; text-decoration: line-through; margin: 0 1px;">ا</span><span>ليه</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"><br></span><span>الحديث الثانى</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"><br></span><span>كل </span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">أ</span><span>مر ذى بال لم يبد</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">ة </span><span>فيه ب</span><span style="background-color: #f8d7da; color: #842029; text-decoration: line-through; margin: 0 1px;">ب</span><span>سم الله الرحمن الرحيم وفى رواية </span><span style="background-color: #d1e7dd; color: #0f5132; margin: 0 1px;">فهو اقطع</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"> </span><span>بالحمد لله</span><span style="background-color: #f8d7da; color: #842029; text-decoration: line-through; margin: 0 1px;">]</span><span> </span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">حم</span><span style="background-color: #f8d7da; color: #842029; text-decoration: line-through; margin: 0 1px;">و</span><span> </span><span style="background-color: #f8d7da; color: #842029; text-decoration: line-through; margin: 0 1px;">اقطع</span><span>وفى رواية أجزم</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"><br></span><span>الحديث الثالث</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"><br>إ</span><span>ذا استيقظ </span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">أ</span><span>حدكم</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"> </span><span>من نومه فلا يغمس</span><span style="background-color: #d1e7dd; color: #0f5132; margin: 0 1px;">ر</span><span> </span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">ب</span><span>د</span><span style="background-color: #f8d7da; color: #842029; text-decoration: line-through; margin: 0 1px;">ه [فى الاناء] </span><span>حت</span><span style="background-color: #f8d7da; color: #842029; text-decoration: line-through; margin: 0 1px;">ى</span><span> يغسلها ثلاثا فانه لا يدر</span><span style="background-color: #d1e7dd; color: #0f5132; margin: 0 1px;">. ف</span><span>ى</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"> </span><span>ا</span><span style="background-color: #d1e7dd; color: #0f5132; margin: 0 1px;">لاناء م "ا</span><span>ين باتت يده</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"><br></span><span>الحديث الرابع عشر</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"><br></span><span>من الفطرة قص</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"> </span><span>الشارب و</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">أ</span><span>عفاء اللحية والسواك واستنشاق الماء</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"> </span><span>وقص ال</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">أ</span><span>ظفار وغسل البراجم ون</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">ش</span><span>ف الابط وحلق</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;"> </span><span>ال</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">ط</span><span>ان</span><span style="background-color: #fff3cd; color: #664d03; margin: 0 1px;">ة</span><span> وانتفاص الماء يعنى الاستنجاء قال الراوى</span>
+    </div>
+    <div style="margin-top: 10px; font-size: 13px; text-align: right; color: #000000;">
+        <span style="background-color: #d1e7dd; padding: 2px 5px; border-radius: 3px; border: 1px solid #0f5132;">Yeşil: Eklenen</span>
+        <span style="background-color: #fff3cd; padding: 2px 5px; border-radius: 3px; border: 1px solid #664d03;">Sarı: Değişen</span>
+        <span style="background-color: #f8d7da; text-decoration: line-through; padding: 2px 5px; border-radius: 3px; border: 1px solid #842029;">Kırmızı: Silinen</span>
+    </div>
+</div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Bu veri seti ve kod kullanıldığında aşağıdaki gibi atıf yapınız."
+title: "Birgivî Kırk Hadis Risalesi — Popüler YZ Araçlarının Arapça El Yazması Tanıma Performansı (Veri ve Kod)"
+authors:
+  - family-names: "Özbek"
+    given-names: "Muhammed Sadık"
+date-released: 2026-06-14
+version: "1.0.0"
+license: MIT
+# Zenodo DOI yayımlandıktan sonra aşağıya eklenecek:
+# doi: 10.5281/zenodo.XXXXXXX
+# url: https://doi.org/10.5281/zenodo.XXXXXXX
+keywords:
+  - hadis
+  - dijital beşeri bilimler
+  - el yazması
+  - HTR
+  - OCR
+  - Levenshtein
+  - büyük dil modelleri

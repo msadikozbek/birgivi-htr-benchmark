@@ -1,0 +1,6 @@
+tool,file,n_char,char_err,char_del,char_ins,char_sub,cer_accuracy,n_word,word_err,word_del,word_ins,word_sub,wer,kaynak
+Google Gemini 3.0 Pro,gemini.txt,682,9,5,0,4,98.68,124,8,2,0,6,6.45,analyze.py (data/outputs/gemini.txt)
+Claude Opus 4.5,claude_opus.txt,682,75,26,40,9,89.0,124,23,5,7,11,18.55,analyze.py (data/outputs/claude_opus.txt)
+Microsoft Copilot Think Deeper,copilot_thinkdeeper.txt,682,100,29,10,61,85.34,124,50,5,1,44,40.32,analyze.py (data/outputs/copilot_thinkdeeper.txt)
+Perplexity Pro,perplexity_pro.txt,682,112,28,39,45,83.58,124,44,5,7,32,35.48,analyze.py (data/outputs/perplexity_pro.txt)
+ChatGPT 5.2,chatgpt.txt,682,115,66,2,47,83.14,124,63,23,0,40,50.81,analyze.py (data/outputs/chatgpt.txt)
