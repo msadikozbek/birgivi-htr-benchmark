@@ -1,5 +1,7 @@
 # Birgivî Forty Hadith — AI Tools' Arabic Manuscript Recognition Benchmark
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20720244.svg)](https://doi.org/10.5281/zenodo.20720244)
+
 *[English](#english) · [Türkçe](#türkçe)*
 
 ---
@@ -21,7 +23,7 @@ evaluated at the character (CER) and word (WER) levels.
 birgivi-htr-benchmark/
 ├── README.md
 ├── LICENSE                         # code: MIT
-├── CITATION.cff                    # citation metadata (Zenodo DOI to be added)
+├── CITATION.cff                    # citation metadata + Zenodo DOI
 ├── requirements.txt
 ├── data/
 │   ├── LICENSE                     # data: CC BY 4.0
@@ -90,6 +92,12 @@ All values are produced uniformly by `src/analyze.py` from the source texts in
 > from a different ChatGPT output. Because a uniform method is preferred, the
 > article's ChatGPT value should be updated to match this dataset: 83.14%
 > (115 errors: 66/2/47; 63 word errors: 23/0/40).
+
+### How to cite
+
+Özbek, Muhammed Sadık. (2026). *Birgivî Kırk Hadis Risalesi — Popüler YZ
+Araçlarının Arapça El Yazması Tanıma Performansı (Veri ve Kod)* (v1.0.0)
+[Data set]. Zenodo. https://doi.org/10.5281/zenodo.20720244
 
 ### License
 
@@ -162,6 +170,12 @@ metinlerden tek tip biçimde üretilir.
 > ChatGPT çıktısından geliyordu. Tek tip yöntem tercih edildiğinden, makaledeki
 > ChatGPT değerinin bu veri setiyle uyumlu biçimde %83,14 (115 hata: 66/2/47;
 > 63 hatalı kelime: 23/0/40) olarak güncellenmesi gerekir.
+
+### Atıf
+
+Özbek, Muhammed Sadık. (2026). *Birgivî Kırk Hadis Risalesi — Popüler YZ
+Araçlarının Arapça El Yazması Tanıma Performansı (Veri ve Kod)* (v1.0.0)
+[Veri seti]. Zenodo. https://doi.org/10.5281/zenodo.20720244
 
 ### Lisans
 
