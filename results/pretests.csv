@@ -1,0 +1,5 @@
+tool,date,file,n_char,char_err,char_del,char_ins,char_sub,cer_accuracy,n_word,word_err,word_del,word_ins,word_sub,wer
+Claude Sonnet 4.5,2026-01-09,pretests/claude_sonnet.txt,682,150,45,27,78,78.01,124,74,13,2,59,59.68
+Microsoft Copilot Smart,2026-01-09,pretests/copilot_smart.txt,682,133,67,11,55,80.5,124,57,14,1,42,45.97
+Perplexity (standard search),2026-01-09,pretests/perplexity_standard.txt,682,522,61,66,395,23.46,124,119,11,3,105,95.97
+Google Vision,2026-01-09,pretests/google_vision.txt,682,1245,23,1186,36,0.0,124,612,2,581,29,493.55

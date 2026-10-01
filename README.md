@@ -34,12 +34,19 @@ birgivi-htr-benchmark/
 │   │   ├── claude_opus.txt
 │   │   ├── copilot_thinkdeeper.txt
 │   │   ├── chatgpt.txt
-│   │   └── perplexity_pro.txt
+│   │   ├── perplexity_pro.txt
+│   │   └── pretests/               # first attempts (9 Jan 2026), not compared
 │   └── manuscript/                 # manuscript image (copyright note)
 ├── src/
-│   └── analyze.py                  # processes all tools → results/
+│   ├── analyze.py                  # processes all tools → results/
+│   ├── recitation_baseline.py      # recitation ceiling + diagnostic features
+│   └── sensitivity.py              # whitespace/bracket checks, first attempts
 └── results/
     ├── metrics.csv                 # single source of all reported numbers
+    ├── recitation_baseline.csv
+    ├── diagnostic_features.csv
+    ├── sensitivity.csv
+    ├── pretests.csv
     └── diff/                       # per-tool visual error report (HTML)
 ```
 
@@ -80,18 +87,47 @@ This rule set reproduces the numbers reported in the article.
 | Google Gemini 3.0 Pro | 98.68% | 9 (5/0/4) | 8 (2/0/6) |
 | Claude Opus 4.5 | 89.00% | 75 (26/40/9) | 23 (5/7/11) |
 | Microsoft Copilot Think Deeper | 85.34% | 100 (29/10/61) | 50 (5/1/44) |
+| ChatGPT 5.2 | 84.90% | 103 (53/2/48) | 49 (10/0/39) |
 | Perplexity Pro | 83.58% | 112 (28/39/45) | 44 (5/7/32) |
-| ChatGPT 5.2 | 83.14% | 115 (66/2/47) | 63 (23/0/40) |
 
 All values are produced uniformly by `src/analyze.py` from the source texts in
 `data/outputs/`.
 
-> **Note — ChatGPT.** Like every tool, ChatGPT is based on the text extracted
-> from its docx output (`chatgpt.txt`), which yields 83.14% (115 errors). An
-> earlier draft of the article listed 84.90% (103 errors) for ChatGPT, derived
-> from a different ChatGPT output. Because a uniform method is preferred, the
-> article's ChatGPT value should be updated to match this dataset: 83.14%
-> (115 errors: 66/2/47; 63 word errors: 23/0/40).
+> **Note — ChatGPT (corrected).** ChatGPT's docx output stores its line breaks
+> as soft returns inside a single paragraph. In v1.0.0 these were dropped during
+> text extraction, which glued the last word of each line to the first word of
+> the next and produced 83.14% (115 errors). With the line breaks preserved, as
+> for every other tool, the same output yields 84.90% (103 errors: 53/2/48;
+> 49 word errors: 10/0/39). `data/outputs/chatgpt.txt` has been corrected
+> accordingly; the earlier statement that 84.90% came "from a different ChatGPT
+> output" was wrong.
+
+> **Note — criteria box.** The "Başarı Kriterleri" box of the HTML reports now
+> follows Holley (2009): Good 98-99%, Average 90-98%, Poor below 90%. The
+> "%90 - %97" range and the correction-effort captions of v1.0.0, which are not
+> in Holley, were removed. No score is affected.
+
+### Recitation baseline
+
+`src/recitation_baseline.py` asks whether the page could be scored highly by
+reciting the well-known hadith texts from memory. A flawless recitation in
+standard modern orthography reaches at most 94.13% character accuracy against
+the diplomatic reference (88.86% without the manuscript-specific title line).
+Diagnostic features per tool (hamza-bearing letters, `الصلوة`/`الصلاة`,
+`أجزم`/`أجذم`, substituted variant wordings) are written to
+`results/diagnostic_features.csv`.
+
+### Sensitivity checks and first attempts
+
+`src/sensitivity.py` reports how the scores change when line breaks are
+collapsed and when the four square brackets marking interlinear additions are
+ignored, and how many errors each tool made in the rubricated title line. With
+whitespace collapsed the order of the last three tools changes (Copilot 87.22%,
+Perplexity 86.49%, ChatGPT 85.17%), so their ranking should not be read as
+definitive. The same script scores the first attempts of 9 January 2026
+(`data/outputs/pretests/`: Claude Sonnet 4.5 78.01%, Copilot Smart 80.50%,
+Perplexity standard search 23.46%, Google Vision), which were not used in the
+comparison.
 
 ### How to cite
 
@@ -158,18 +194,47 @@ hesaplanır; silme/ekleme/değiştirme ayrı sayılır.
 | Google Gemini 3.0 Pro | %98,68 | 9 (5/0/4) | 8 (2/0/6) |
 | Claude Opus 4.5 | %89,00 | 75 (26/40/9) | 23 (5/7/11) |
 | Microsoft Copilot Think Deeper | %85,34 | 100 (29/10/61) | 50 (5/1/44) |
+| ChatGPT 5.2 | %84,90 | 103 (53/2/48) | 49 (10/0/39) |
 | Perplexity Pro | %83,58 | 112 (28/39/45) | 44 (5/7/32) |
-| ChatGPT 5.2 | %83,14 | 115 (66/2/47) | 63 (23/0/40) |
 
 Tüm değerler `src/analyze.py` tarafından `data/outputs/` altındaki kaynak
 metinlerden tek tip biçimde üretilir.
 
-> **Not — ChatGPT.** Tüm araçlar gibi ChatGPT de docx'ten çıkarılan kaynak metne
-> (`chatgpt.txt`) dayandırılmıştır; bu metin %83,14 (115 hata) verir. Makalenin
-> önceki sürümünde ChatGPT için %84,90 (103 hata) yazılıydı; o değer farklı bir
-> ChatGPT çıktısından geliyordu. Tek tip yöntem tercih edildiğinden, makaledeki
-> ChatGPT değerinin bu veri setiyle uyumlu biçimde %83,14 (115 hata: 66/2/47;
-> 63 hatalı kelime: 23/0/40) olarak güncellenmesi gerekir.
+> **Not — ChatGPT (düzeltme).** ChatGPT'nin docx çıktısında satır sonları tek
+> paragraf içinde satır başı karakteri olarak saklanmıştır. v1.0.0'da metne
+> çevirme sırasında bunlar düşmüş, her satırın son kelimesi bir sonraki satırın
+> ilk kelimesine yapışmış ve %83,14 (115 hata) elde edilmiştir. Satır sonları
+> diğer araçlarda olduğu gibi korunduğunda aynı çıktı %84,90 (103 hata: 53/2/48;
+> 49 hatalı kelime: 10/0/39) verir. `data/outputs/chatgpt.txt` buna göre
+> düzeltilmiştir; %84,90 değerinin "farklı bir ChatGPT çıktısından geldiği"
+> yönündeki önceki not yanlıştı.
+
+> **Not — Başarı Kriterleri kutusu.** HTML raporlardaki kutu Holley'ye (2009)
+> göre düzeltilmiştir: İyi %98-99, Orta %90-98, Zayıf %90'ın altı. v1.0.0'daki
+> "%90 - %97" aralığı ile kaynakta bulunmayan düzeltme nitelemeleri
+> çıkarılmıştır. Puanlar bu değişiklikten etkilenmez.
+
+### Ezberden okuma taban çizgisi
+
+`src/recitation_baseline.py`, sayfanın yaygın biçimde bilinen hadis metinleri
+ezberden yazılarak yüksek puanla geçilip geçilemeyeceğini sınar. Standart
+imlayla kusursuz bir ezber okuması, diplomatik referansa göre en fazla %94,13
+karakter doğruluğuna ulaşır (nüshaya özgü başlık satırı olmadan %88,86). Araç
+başına ayırt edici özellikler (hemzeli harf sayısı, `الصلوة`/`الصلاة`,
+`أجزم`/`أجذم`, ikame edilen rivayet lafızları)
+`results/diagnostic_features.csv` dosyasına yazılır.
+
+### Duyarlılık denetimleri ve ilk denemeler
+
+`src/sensitivity.py`, satır sonları tek boşluğa indirildiğinde ve satır arası
+kayıtları gösteren dört köşeli ayraç yok sayıldığında puanların nasıl
+değiştiğini ve her aracın kırmızı mürekkepli başlık satırında kaç hata
+yaptığını raporlar. Boşluklar tekleştirildiğinde son üç aracın sırası değişir
+(Copilot %87,22, Perplexity %86,49, ChatGPT %85,17); bu sebeple bu üç aracın
+sıralaması kesin kabul edilmemelidir. Aynı betik 9 Ocak 2026 tarihli ilk
+denemeleri de puanlar (`data/outputs/pretests/`: Claude Sonnet 4.5 %78,01,
+Copilot Smart %80,50, Perplexity standart arama %23,46, Google Vision); bu
+çıktılar karşılaştırmada kullanılmamıştır.
 
 ### Atıf
 

@@ -83,6 +83,11 @@ def compute(ref, hyp):
 # screen output. Only the data inputs and the tool name are parameterized.
 # Aşağıdaki HTML/CSS şablonu, üretilen raporun yazarın özgün ekran çıktısıyla
 # aynı olması için çalışmanın özgün betiğinden birebir korunmuştur.
+# Exception (after v1.0.0): the criteria box follows Holley (2009): Good 98-99%,
+# Average 90-98%, Poor below 90%. The former "%90 - %97" range and the
+# correction-effort captions, which are not in Holley, were removed.
+# İstisna (v1.0.0 sonrası): Başarı Kriterleri kutusu Holley'ye (2009) göre düzeltilmiş,
+# kaynakta bulunmayan "%90 - %97" aralığı ve düzeltme nitelemeleri çıkarılmıştır.
 def render_report(name, ref, hyp, path):
     ref, hyp = normalize(ref), normalize(hyp)
 
@@ -110,11 +115,11 @@ def render_report(name, ref, hyp, path):
     c_sub_bg, c_sub_tx = "#fff3cd", "#664d03"   # Sarı
 
     if accuracy >= 98:
-        durum_renk, durum_mesaj, durum_aciklama = c_ins_bg, "İYİ", "Sınırlı seviyede düzeltme gerekir"
+        durum_renk, durum_mesaj = c_ins_bg, "İYİ"
     elif accuracy >= 90:
-        durum_renk, durum_mesaj, durum_aciklama = c_sub_bg, "ORTA", "Önemli ölçüde düzeltme gerekir"
+        durum_renk, durum_mesaj = c_sub_bg, "ORTA"
     else:
-        durum_renk, durum_mesaj, durum_aciklama = c_del_bg, "ZAYIF", "Neredeyse yeniden yazılması gerekir"
+        durum_renk, durum_mesaj = c_del_bg, "ZAYIF"
 
     left_panel = f"""
 <div style="flex: 0 0 380px; font-family: 'Segoe UI', Arial, sans-serif; padding-right: 20px; border-right: 2px solid #ccc; color: #000000;">
@@ -149,35 +154,31 @@ def render_report(name, ref, hyp, path):
     <div style="background-color: {durum_renk}; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #000; color: #000000;">
         <h4 style="margin:0; color: #000000;">Karakter Doğruluk Oranı</h4>
         <h1 style="margin: 5px 0; font-size: 32px; color: #000000;">%{accuracy:.2f}</h1>
-        <span style="font-weight: bold; font-size: 18px; color: #000000;">{durum_mesaj}</span><br>
-        <span style="font-size: 14px; color: #000000; font-style: italic;">{durum_aciklama}</span>
+        <span style="font-weight: bold; font-size: 18px; color: #000000;">{durum_mesaj}</span>
     </div>
     <br>
     <h4 style="margin: 15px 0 5px 0; border-bottom: 1px solid #000; color: #000000;">🏆 Başarı Kriterleri</h4>
     <table style="width: 100%; border-collapse: collapse; font-size: 14px; color: #000000;">
         <tr style="background-color: #333; color: white;">
             <th style="padding: 6px; text-align: left; border: 1px solid #000;">Doğruluk Oranı</th>
-            <th style="padding: 6px; text-align: left; border: 1px solid #000;">Durum / Açıklama</th>
+            <th style="padding: 6px; text-align: left; border: 1px solid #000;">Durum</th>
         </tr>
         <tr>
             <td style="padding: 8px; border: 1px solid #999; color: #000000; vertical-align: top;"><b>%98 - %100</b></td>
             <td style="padding: 8px; border: 1px solid #999; color: #000000;">
-                <b>İYİ</b><br>
-                <span style="font-style:italic; font-size: 12px;">Sınırlı seviyede düzeltme gerekir.</span>
+                <b>İYİ</b>
             </td>
         </tr>
         <tr>
-            <td style="padding: 8px; border: 1px solid #999; color: #000000; vertical-align: top;"><b>%90 - %97</b></td>
+            <td style="padding: 8px; border: 1px solid #999; color: #000000; vertical-align: top;"><b>%90 - %98</b></td>
             <td style="padding: 8px; border: 1px solid #999; color: #000000;">
-                <b>ORTA</b><br>
-                <span style="font-style:italic; font-size: 12px;">Önemli ölçüde düzeltme gerekir.</span>
+                <b>ORTA</b>
             </td>
         </tr>
         <tr>
             <td style="padding: 8px; border: 1px solid #999; color: #000000; vertical-align: top;"><b>< %90</b></td>
             <td style="padding: 8px; border: 1px solid #999; color: #000000;">
-                <b>ZAYIF</b><br>
-                <span style="font-style:italic; font-size: 12px;">Neredeyse yeniden yazılması gerekir.</span>
+                <b>ZAYIF</b>
             </td>
         </tr>
     </table>

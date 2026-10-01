@@ -1,0 +1,6 @@
+tool,cer_accuracy,char_err,cer_accuracy_whitespace_collapsed,char_err_whitespace_collapsed,cer_accuracy_no_brackets,title_line_errors,title_line_chars
+Google Gemini 3.0 Pro,98.68,9,98.83,8,98.67,1,35
+Claude Opus 4.5,89.0,75,89.13,74,89.38,2,35
+Microsoft Copilot Think Deeper,85.34,100,87.22,87,85.84,9,35
+ChatGPT 5.2,84.9,103,85.17,101,85.4,7,35
+Perplexity Pro,83.58,112,86.49,92,83.92,0,35

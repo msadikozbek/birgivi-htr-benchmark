@@ -1,0 +1,7 @@
+text,hamza_letters,final_ya_dotted,final_ya_undotted,salawat_spelling,bi_bismi,ajzam_with_zay,ajdham_with_dhal,yatazawwajuha,yankihuha,abtar,fal_yaghsil,al_anah_undotted,intifas,intiqas,qala_al_rawi
+REFERENCE (manuscript),3,0,17,الصلوة,True,True,False,True,False,False,False,True,True,False,True
+Google Gemini 3.0 Pro,4,0,16,الصلوة,True,True,False,True,False,False,False,False,False,True,True
+Claude Opus 4.5,2,0,18,الصلوة,True,False,True,True,False,False,False,False,False,True,True
+Microsoft Copilot Think Deeper,28,9,6,الصلاة,False,False,True,True,False,False,True,False,False,True,True
+ChatGPT 5.2,24,9,5,الصلاة,False,True,False,False,True,True,False,False,False,False,False
+Perplexity Pro,13,0,16,الصلوة,False,True,False,True,False,False,False,False,True,False,True
