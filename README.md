@@ -1,6 +1,6 @@
 # Birgivî Forty Hadith — AI Tools' Arabic Manuscript Recognition Benchmark
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20720244.svg)](https://doi.org/10.5281/zenodo.20720244)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20720243.svg)](https://doi.org/10.5281/zenodo.20720243)
 
 *[English](#english) · [Türkçe](#türkçe)*
 
@@ -132,8 +132,12 @@ comparison.
 ### How to cite
 
 Özbek, Muhammed Sadık. (2026). *Birgivî Kırk Hadis Risalesi — Popüler YZ
-Araçlarının Arapça El Yazması Tanıma Performansı (Veri ve Kod)* (v1.0.0)
-[Data set]. Zenodo. https://doi.org/10.5281/zenodo.20720244
+Araçlarının Arapça El Yazması Tanıma Performansı (Veri ve Kod)* (v1.1.0)
+[Data set]. Zenodo. https://doi.org/10.5281/zenodo.20720243
+
+The DOI above resolves to the latest version. v1.0.0 (superseded; ChatGPT value
+affected by the line-break error) remains at
+https://doi.org/10.5281/zenodo.20720244.
 
 ### License
 
@@ -239,8 +243,12 @@ Copilot Smart %80,50, Perplexity standart arama %23,46, Google Vision); bu
 ### Atıf
 
 Özbek, Muhammed Sadık. (2026). *Birgivî Kırk Hadis Risalesi — Popüler YZ
-Araçlarının Arapça El Yazması Tanıma Performansı (Veri ve Kod)* (v1.0.0)
-[Veri seti]. Zenodo. https://doi.org/10.5281/zenodo.20720244
+Araçlarının Arapça El Yazması Tanıma Performansı (Veri ve Kod)* (v1.1.0)
+[Veri seti]. Zenodo. https://doi.org/10.5281/zenodo.20720243
+
+Yukarıdaki DOI en güncel sürüme yönlenir. Satır sonu hatası sebebiyle ChatGPT
+değeri hatalı olan v1.0.0 sürümü https://doi.org/10.5281/zenodo.20720244
+adresinde durmaktadır.
 
 ### Lisans
 

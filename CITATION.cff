@@ -4,11 +4,11 @@ title: "Birgivî Kırk Hadis Risalesi — Popüler YZ Araçlarının Arapça El 
 authors:
   - family-names: "Özbek"
     given-names: "Muhammed Sadık"
-date-released: 2026-06-16
-version: "1.0.0"
+date-released: 2026-10-01
+version: "1.1.0"
 license: MIT
-doi: 10.5281/zenodo.20720244
-url: "https://doi.org/10.5281/zenodo.20720244"
+doi: 10.5281/zenodo.20720243
+url: "https://doi.org/10.5281/zenodo.20720243"
 repository-code: "https://github.com/msadikozbek/birgivi-htr-benchmark"
 keywords:
   - hadis
